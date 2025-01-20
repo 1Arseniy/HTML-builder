@@ -3,6 +3,13 @@ const path = require('node:path');
 const pathFolder = path.dirname('04-copy-directory/files/test-js.js');
 const copyDir = () => {
   fs.readdir(pathFolder, (err, files1) => {
+    fs.mkdir(
+      path.join('04-copy-directory', 'files-copy'),
+      { recursive: true },
+      (err) => {
+        err;
+      },
+    );
     if (err) {
       console.error('error');
     } else {
@@ -30,14 +37,3 @@ const copyDir = () => {
   });
 };
 copyDir();
-
-const createDelFolder = () => {
-  fs.mkdir(
-    path.join('04-copy-directory', 'files-copy'),
-    { recursive: true },
-    (err) => {
-      err;
-    },
-  );
-};
-createDelFolder();

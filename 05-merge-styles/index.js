@@ -26,11 +26,9 @@ const copyFile2 = async () => {
   await Promise.all(allPromises);
   const newArr = [];
   newArr.push(arrStyles[0] + arrStyles[1] + arrStyles[2]);
-  console.log(newArr);
   const bundleFolder = fsReadWrite.createWriteStream(
     '05-merge-styles/project-dist/bundle.css',
   );
   bundleFolder.write(newArr.join());
-  console.log(arrStyles);
 };
 copyFile2();
