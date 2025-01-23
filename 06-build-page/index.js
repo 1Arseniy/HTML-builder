@@ -55,12 +55,10 @@ const copyFile2 = async () => {
     }
   });
   await Promise.all(allPromises);
-  const newArr = [];
-  newArr.push(arrStyles[0] + arrStyles[1] + arrStyles[2] + arrStyles[3]);
   const bundleFolder = fs.createWriteStream(
     '06-build-page/project-dist/style.css',
   );
-  bundleFolder.write(newArr.join());
+  bundleFolder.write(arrStyles.join(''));
 };
 copyFile2();
 
